@@ -26,7 +26,7 @@ $(function () {
       var chartData = {
         labels: [ "M", "T", "W", "T", "F", "S", "S"],
         datasets: [{
-          data: [212, 262, 352, 402, 515, 815, data.totalContributions],
+          data: [6012, 6924, 8064, 8564, 11778, 12378, data.totalContributions],
           backgroundColor: colors[3],
           borderColor: colors[1],
           borderWidth: 4,
