@@ -51,6 +51,10 @@ body{
 .nav-spacer{
   height: 30vh;
 }
+
+.main-dashboard{
+  height: 25vh;
+}
 .tables-container{
   padding: 2.5vh 2.5vw;
 }

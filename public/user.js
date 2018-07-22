@@ -3,8 +3,8 @@
 let userData = {};
 let foundationSource = $("#foundation-template").html();
 let template = Handlebars.compile(foundationSource);
-
-$.get('http://localhost:8080/api/user/5b5401660d81b52de925dd7c', (data) => {
+let userId = getUrlParams('userId')
+$.get(`http://localhost:3000/api/user/${userId}`, (data) => {
   console.log('data', data)
 }).then((data) => {
   $('#total').text(`$${data.contributionsTotal}`)
@@ -52,7 +52,7 @@ var appChart = new Chart(apps, {
 
 })
 
-$.get('http://localhost:8080/api/foundation/', (data) => {
+$.get('http://localhost:3000/api/foundation/', (data) => {
   console.log('foundations', data)
   let cleanedData = data.map(foundation => {
         return { name: foundation.name, totalRaised: foundation.totalRaised }
@@ -64,4 +64,18 @@ $.get('http://localhost:8080/api/foundation/', (data) => {
 
 var foundations = $("#foundations");
 var apps = $("#apps");
+
+
+function getUrlParams(prop) {
+  var params = {};
+  var search = decodeURIComponent(window.location.href.slice(window.location.href.indexOf('?') + 1));
+  var definitions = search.split('&');
+
+  definitions.forEach(function (val, key) {
+    var parts = val.split('=', 2);
+    params[parts[0]] = parts[1];
+  });
+
+  return (prop && prop in params) ? params[prop] : params;
+}
 
