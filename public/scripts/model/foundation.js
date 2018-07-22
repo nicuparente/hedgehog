@@ -7,7 +7,7 @@ var app = app || {};
     Object.keys(rawDataObj).forEach(key => this[key] = rawDataObj[key]);
   }
   Foundation.prototype.toHtml = function () {
-    let template = Handlebars.compile($('#FoundationTemplate').html());
+    let template = Handlebars.compile($('#foundation-template').html());
     return template(this)
   };
 

@@ -36,18 +36,20 @@
           <div class="timechart"></div>
         </div>
         <div class="tables-container row">
-          <div class="col-5 foundations-table"></div>
-          <div class="col-7 campaign-table"></div>
+          <div id="foundationTable" class="col-5 foundations-table"></div>
+          <div id="campaignTable"class="col-7 campaign-table table-striped"></div>
         </div>
       </div>
     </div>
   </div>
+  <!-- Templates -->
   <script id="foundation-template" type="text/x-handlebars-template">
+    <h2 style="text-align: center">Foundations</h2>
     <table class="table">
       <thead class="thead-dark">
         <tr>
           <th scope="col">Name</th>
-          <th scope="col">Total Raised</th>
+          <th scope="col">Contributions</th>
         </tr>
       </thead>
       <tbody>
@@ -61,17 +63,41 @@
     </table>
   </script>
 
+  <script id="campaign-template" type="text/x-handlebars-template">
+    <h2 style="text-align: center">Campaigns</h2>
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Status</th>
+          <th scope="col">Total Raised</th>
+          <th scope="col">Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#campaigns}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{status}}</td>
+          <td>{{totalRaised}}</td>
+          <td>{{targetContribution}}</td>
+        </tr>
+        {{/campaigns}}
+      </tbody>
+    </table>
+  </script>
+
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
+  <script src="./main.js"></script>
 </body>
 
 </html>
