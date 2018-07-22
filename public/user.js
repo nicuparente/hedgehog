@@ -4,7 +4,7 @@ let userData = {};
 let foundationSource = $("#foundation-template").html();
 let template = Handlebars.compile(foundationSource);
 let userId = getUrlParams('userId')
-$.get(`http://localhost:3000/api/user/${userId}`, (data) => {
+$.get(`https://hedgehog-backend.herokuapp.com/api/user/${userId}`, (data) => {
   console.log('data', data)
 }).then((data) => {
   $('#total').text(`$${data.contributionsTotal}`)
@@ -52,7 +52,7 @@ var appChart = new Chart(apps, {
 
 })
 
-$.get('http://localhost:3000/api/foundation/', (data) => {
+$.get('https://hedgehog-backend.herokuapp.com/api/foundation/', (data) => {
   console.log('foundations', data)
   let cleanedData = data.map(foundation => {
         return { name: foundation.name, totalRaised: foundation.totalRaised }
@@ -78,4 +78,3 @@ function getUrlParams(prop) {
 
   return (prop && prop in params) ? params[prop] : params;
 }
-

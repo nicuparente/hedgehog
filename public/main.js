@@ -15,7 +15,7 @@ $(function () {
 
   
   console.log(companyId);
-  $.get(`http://localhost:3000/api/company/${companyId}`)
+  $.get(`https://hedgehog-backend.herokuapp.com/api/company/${companyId}`)
     .then((data) => {
       console.log(data);
       let cleanedData = data.foundations.map(foundation => {
@@ -46,7 +46,7 @@ $(function () {
       foundationData = { foundations: cleanedData }
       $("#foundationTable").append(template(foundationData));
 
-      $.get('http://localhost:3000/api/campaign')
+      $.get('https://hedgehog-backend.herokuapp.com/api/campaign')
         .then(campaigns => {
           campaigns.forEach(c => {
             if (campaignLookupArr.indexOf(c._id)) {
