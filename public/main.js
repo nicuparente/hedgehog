@@ -34,7 +34,35 @@ $(function () {
     })
 
 
+  var chartData = {
+    labels: ["S", "M", "T", "W", "T", "F", "S"],
+    datasets: [
+      {
+        data: [639, 465, 493, 478, 589, 632, 674,900,1000],
+        backgroundColor: ['#4286f4'],
+        label: "Cocaine"
+      },]
+  };
 
+  var chLine = document.getElementById("chLine");
+  if (chLine) {
+    new Chart(chLine, {
+      type: 'line',
+      data: chartData,
+      options: {
+        scales: {
+          yAxes: [{
+            ticks: {
+              beginAtZero: false
+            }
+          }]
+        },
+        legend: {
+          display: true
+        }
+      }
+    });
+  }
 
 
 });
