@@ -2,8 +2,9 @@ body{
   width: 100%;
 }
 .container{
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  max-width: 100%;
+  height: 100vh;
   margin: 0;
 }
 
@@ -40,6 +41,7 @@ body{
   font-size: 1.7em;
   background: #59779F;
   margin-top:.3%;
+  font-weight: 600;
 }
 
 .nav-item:hover{
@@ -47,5 +49,23 @@ body{
 
 }
 .nav-spacer{
-  height: 20vh;
+  height: 30vh;
+}
+.tables-container{
+  padding: 2.5vh 2.5vw;
+}
+.campaign-table{
+  background: #2E343B;
+  height: 45vh;
+}
+.foundations-table{
+  background: rgb(60, 69, 78);
+}
+
+.timechart-container{
+  padding: 2.5vh;
+}
+.timechart{
+  height: 45vh;
+  background:pink;
 }

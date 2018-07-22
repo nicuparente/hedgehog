@@ -23,23 +23,43 @@
           <div class="nav-image-container">
             <img src="https://upload.wikimedia.org/wikipedia/commons/c/cc/Amazon_Alexa_App_Logo.png">
           </div>
-          <div class="nav-name-container">Welcome back Alexa!</div>
+          <div class="nav-name-container">Welcome back, Alexa!</div>
         </div>
-        
+
         <div class="nav-item create-campaign-button">CREATE CAMPAIGN</div>
         <div class="nav-spacer"></div>
         <div class="nav-item about-button">ABOUT</div>
         <div class="nav-item logout-button">LOGOUT</div>
       </div>
       <div class="col main-dashboard">
-        <div class="card">
-          <div class="card-body">
-            <canvas id="chLine"></canvas>
-          </div>
+        <div class="timechart-container">
+          <div class="timechart"></div>
+        </div>
+        <div class="tables-container row">
+          <div class="col-5 foundations-table"></div>
+          <div class="col-7 campaign-table"></div>
         </div>
       </div>
     </div>
   </div>
+  <script id="foundation-template" type="text/x-handlebars-template">
+    <table class="table">
+      <thead class="thead-dark">
+        <tr>
+          <th scope="col">Name</th>
+          <th scope="col">Total Raised</th>
+        </tr>
+      </thead>
+      <tbody>
+        {{#foundations}}
+        <tr>
+          <td>{{name}}</td>
+          <td>{{totalRaised}}</td>
+        </tr>
+        {{/foundations}}
+      </tbody>
+    </table>
+  </script>
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -50,6 +70,8 @@
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em"
     crossorigin="anonymous"></script>
   <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/page.js/1.7.1/page.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.4/handlebars.js"></script>
 </body>
 
 </html>
